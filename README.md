@@ -1,2 +1,2 @@
-#Pebby Fachriza-sukses
+#Pebby Fachriza
 Praktikum Pemrogaman web
