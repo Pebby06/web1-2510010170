@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Katalog kain dan busana Sasirangan khas Banjarmasin karya pengrajin lokal.">
     <title>web1-2510010170</title>
+
+    <style>
+        .katalog {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .galeri {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .kartu {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .kartu img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+        }
+    </style>
+
+</head>
 </head>
 <body>
     <header>
@@ -32,6 +59,46 @@
 
         <a href="#katalog">Lihat Katalog</a>
     </section>
+    </section>
+
+        <!-- KATALOG GAMBAR -->
+        <section class="katalog" id="katalog">
+            <h2>Katalog Motif Kain Sasirangan</h2>
+
+            <div class="galeri">
+                <div class="kartu">
+                    <img src="img/bayam-raja.svg" alt="Bayam Raja">
+                    <h3>Bayam Raja</h3>
+                </div>
+
+                <div class="kartu">
+                    <img src="img/gigi-haruan.svg" alt="Gigi Haruan">
+                    <h3>Gigi Haruan</h3>
+                </div>
+
+                <div class="kartu">
+                    <img src="img/iris-pudak.svg" alt="Iris Pudak">
+                    <h3>Iris Pudak</h3>
+                </div>
+
+                <div class="kartu">
+                    <img src="img/kambang-kacang.svg" alt="Kambang Kacang">
+                    <h3>Kambang Kacang</h3>
+                </div>
+
+                <div class="kartu">
+                    <img src="img/naga-balimbur.svg" alt="Naga Balimbur">
+                    <h3>Naga Balimbur</h3>
+                </div>
+
+                <div class="kartu">
+                    <img src="img/ombak-sinapur-karang.svg" alt="Ombak Sinapur Karang">
+                    <h3>Ombak Sinapur Karang</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
 </main>
 
 </body>
