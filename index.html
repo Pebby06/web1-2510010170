@@ -3,107 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Katalog kain dan busana Sasirangan khas Banjarmasin karya pengrajin lokal.">
+    <meta name="description" content="Katalog kain dan busana Sasirangan khas Banjar.">
     <title>Sasirangan Banua | Kain Khas Banjar</title>
 
     <style>
-        .katalog {
-            padding: 30px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body  
+            background-color: #f5efe6;
+            color: #333;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        
+
+        header {
+            background-color: #0f5800;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #ffd166;
+        }
+
+        /* HERO */
+        .hero {
             text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #164d12, #39852c);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        .tombol {
+            display: inline-block;
+            background-color: #ffd166;
+            color: #333;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .tombol:hover {
+            background-color: #f5b82e;
+        }
+
+        .katalog {
+            padding: 50px 7%;
+            text-align: center;
+        }
+
+        .katalog h2,
+        .bagian h2 {
+            color: #0f5800;
+            font-size: 28px;
+            margin-bottom: 25px;
         }
 
         .galeri {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
         }
 
         .kartu {
-            background: white;
-            padding: 15px;
+            background-color: white;
+            padding: 18px;
             border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .kartu:hover {
+            transform: translateY(-5px);
         }
 
         .kartu img {
             width: 100%;
-            height: 300x;
+            height: 200px;
             object-fit: contain;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .kartu h3 {
+            color: #0f5800;
+            margin-bottom: 8px;
+        }
+
+        .kartu p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .harga {
+            color: #0f5800;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* TENTANG KAMI */
+        .bagian {
+            padding: 50px 7%;
+            background-color: white;
+            margin-top: 20px;
+        }
+
+        .bagian h3 {
+            color: #0f5800;
+            margin: 25px 0 10px;
+        }
+
+        .bagian ul {
+            padding-left: 25px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0f5800;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5efe6;
+        }
+
+        /* FOOTER */
+        .footer-situs {
+            background-color: #0f5800;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .galeri {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .galeri {
+                grid-template-columns: 1fr;
+            }
+
+            .katalog {
+                padding: 35px 18px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .menu {
+                gap: 12px;
+                font-size: 14px;
+            }
         }
     </style>
+</head>
 
-</head>
-</head>
 <body>
+
+    <!-- HEADER -->
     <header>
-    <p class="logo">
-        <a href="index.html">web1-2510010170</a>
-    </p>
-
-    <nav aria-label="Navigasi utama">
-        <ul class="menu">
-            <li><a href="index.html" aria-current="page">Beranda</a></li>
-            <li><a href="#katalog">Katalog</a></li>
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="kontak.html">Pesan</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section class="hero" id="beranda">
-        <h1>Keindahan Kain Sasirangan Banua</h1>
-
-        <p>
-            Kenali keunikan kain Sasirangan khas Banjar
-            dengan motif indah dan warna yang memikat.
+        <p class="logo">
+            <a href="index.html">Sasirangan Banua</a>
         </p>
 
-        <a href="#katalog">Lihat Katalog</a>
-    </section>
-    </section>
+        <nav aria-label="Navigasi utama">
+            <ul class="menu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#katalog">Katalog</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="kontak.html">Pesan</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="beranda">
+            <h1>Keindahan Kain Sasirangan Banua</h1>
+
+            <p>
+                Kenali keunikan kain Sasirangan khas Banjar
+                dengan motif indah dan warna yang memikat.
+            </p>
+
+            <a href="#katalog" class="tombol">Lihat Katalog</a>
+        </section>
+
+        <!-- KATALOG -->
         <section class="katalog" id="katalog">
             <h2>Katalog Motif Kain Sasirangan</h2>
 
-            <div class="kartu"></div>
-            <img src="img/bayam-raja.svg" alt="Bayam Raja">
-                <h3>Bayam Raja</h3>
-                <p>Kain sasirangan dengan motif bayam raja khas Banjar.</p>
-                <p class="harga">Rp190.000</p>
+            <div class="galeri">
+
+                <div class="kartu">
+                    <img src="img/bayam-raja.svg" alt="Motif Bayam Raja">
+                    <h3>Bayam Raja</h3>
+                    <p>Kain sasirangan dengan motif Bayam Raja khas Banjar.</p>
+                    <p class="harga">Rp190.000</p>
                 </div>
 
                 <div class="kartu">
-                    <img src="img/gigi-haruan.svg" alt="Gigi Haruan">
+                    <img src="img/gigi-haruan.svg" alt="Motif Gigi Haruan">
                     <h3>Gigi Haruan</h3>
-                    <p>Kain Katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan.</p>
+                    <p>Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan.</p>
                     <p class="harga">Rp185.000</p>
                 </div>
 
                 <div class="kartu">
-                    <img src="img/iris-pudak.svg" alt="Iris Pudak">
+                    <img src="img/iris-pudak.svg" alt="Motif Iris Pudak">
                     <h3>Iris Pudak</h3>
+                    <p>Motif Iris Pudak dengan corak khas kain Sasirangan.</p>
                 </div>
 
                 <div class="kartu">
-                    <img src="img/kambang-kacang.svg" alt="Kambang Kacang">
+                    <img src="img/kambang-kacang.svg" alt="Motif Kambang Kacang">
                     <h3>Kambang Kacang</h3>
+                    <p>Motif tradisional Kambang Kacang khas budaya Banjar.</p>
                 </div>
 
                 <div class="kartu">
-                    <img src="img/naga-balimbur.svg" alt="Naga Balimbur">
+                    <img src="img/naga-balimbur.svg" alt="Motif Naga Balimbur">
                     <h3>Naga Balimbur</h3>
+                    <p>Motif Naga Balimbur yang menjadi bagian dari kekayaan motif Banjar.</p>
                 </div>
 
                 <div class="kartu">
-                    <img src="img/ombak-sinapur-karang.svg" alt="Ombak Sinapur Karang">
+                    <img src="img/ombak-sinapur-karang.svg" alt="Motif Ombak Sinapur Karang">
                     <h3>Ombak Sinapur Karang</h3>
-                    <p class="harga">Rp150.000</p>
-                <div class="kartu">
+                    <p>Motif Ombak Sinapur Karang khas kain Sasirangan.</p>
+                </div>
 
             </div>
         </section>
 
+        <!-- TENTANG KAMI -->
+        <section class="bagian" id="tentang">
+
+            <h2>Tentang Kami</h2>
+
+            <p>
+                <strong>Sasirangan Banua</strong> adalah UMKM fiktif
+                yang memproduksi kain Sasirangan dengan teknik tradisional.
+                Kami memperkenalkan keindahan motif khas Banjar
+                kepada masyarakat luas.
+            </p>
+
+            <h3>Keunggulan Produk</h3>
+
+            <ul>
+                <li>Dikerjakan pengrajin lokal</li>
+                <li>Motif khas budaya Banjar</li>
+                <li>Bahan berkualitas</li>
+            </ul>
+
+            <h3>Jam Buka Galeri</h3>
+
+            <table>
+                <tr>
+                    <th>Hari</th>
+                    <th>Jam Buka</th>
+                </tr>
+
+                <tr>
+                    <td>Senin–Kamis</td>
+                    <td>08.00–17.00</td>
+                </tr>
+
+                <tr>
+                    <td>Jumat</td>
+                    <td>08.00–11.00 dan 14.00–17.00</td>
+                </tr>
+
+                <tr>
+                    <td>Sabtu–Ahad</td>
+                    <td>09.00–16.00</td>
+                </tr>
+            </table>
+
+        </section>
+
     </main>
-</main>
+
+    <!-- FOOTER -->
+    <footer class="footer-situs">
+        <p>© 2026 Sasirangan Banua</p>
+        <p>Dibuat oleh Pebby Fachriza (2510010170)</p>
+    </footer>
 
 </body>
 </html>
