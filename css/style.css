@@ -368,11 +368,11 @@ input[type="checkbox"] {
         padding: 2rem 1rem;
     }
 
-    /* Katalog menjadi 2 kolom di HP */
-    .katalog-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
+    /* Katalog menjadi 1 kolom di HP */
+.katalog-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
 
     .kartu {
         min-width: 0;
