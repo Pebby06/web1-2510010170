@@ -43,7 +43,7 @@ const katalog = [
     nama: "Kain Motif Sasirangan Tradisional",
     kategori: "kain",
     harga: 180000,
-    gambar: "img/gigi-haruan.svg",
+    gambar: "img/bayam-raja.svg",
     deskripsi: "Kain sasirangan dengan motif tradisional khas Banjar.",
 },
 {
@@ -51,7 +51,7 @@ const katalog = [
     nama: "Selendang Sasirangan Banua",
     kategori: "aksesoris",
     harga: 125000,
-    gambar: "img/iris-pudak.svg",
+    gambar: "img/ombak-sinapur-karang.svg",
     deskripsi: "Selendang sasirangan dengan motif khas Kalimantan Selatan.",
 },
 	  // ... lanjutkan untuk semua item (minimal 8 untuk tema Anda) 
@@ -121,3 +121,41 @@ function tampilkanKatalog(daftarProduk) {
 
 // 10. Tampilkan semua produk ketika halaman pertama kali dibuka
 tampilkanKatalog(katalog);
+// 7. Menyaring katalog berdasarkan kata kunci dan kategori
+function saringKatalog() {
+    const kataKunci = inputCari.value.trim().toLowerCase();
+
+    const hasil = katalog.filter((produk) => {
+        const cocokKategori =
+            kategoriAktif === "semua" ||
+            produk.kategori === kategoriAktif;
+
+        const cocokKata =
+            produk.nama.toLowerCase().includes(kataKunci) ||
+            produk.deskripsi.toLowerCase().includes(kataKunci);
+
+        return cocokKategori && cocokKata;
+    });
+
+    tampilkanKatalog(hasil);
+}
+
+// 8. Event pencarian produk
+inputCari.addEventListener("input", saringKatalog);
+
+// 9. Event filter kategori
+tombolFilter.forEach((tombol) => {
+    tombol.addEventListener("click", () => {
+        kategoriAktif = tombol.dataset.kategori;
+
+        tombolFilter.forEach((t) => {
+            t.classList.remove("aktif");
+            t.setAttribute("aria-pressed", "false");
+        });
+
+        tombol.classList.add("aktif");
+        tombol.setAttribute("aria-pressed", "true");
+
+        saringKatalog();
+    });
+});
