@@ -339,6 +339,7 @@ input[type="checkbox"] {
         transition: none !important;
     }
 }
+/* RESPONSIVE HP */
 @media (max-width: 767px) {
 
     .header-situs {
@@ -367,8 +368,26 @@ input[type="checkbox"] {
         padding: 2rem 1rem;
     }
 
+    /* Katalog menjadi 2 kolom di HP */
     .katalog-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .kartu {
+        min-width: 0;
+    }
+
+    .kartu-isi {
+        padding: 10px;
+    }
+
+    .kartu h3 {
+        font-size: 1rem;
+    }
+
+    .kartu p {
+        font-size: 0.85rem;
     }
 
     .form-pesan {
@@ -381,6 +400,7 @@ input[type="checkbox"] {
         font-size: 0.8rem;
     }
 }
+
 /* ---------- 12. Komponen interaktif (Modul 3) ---------- */
 .kontrol-katalog {
   display: flex;
