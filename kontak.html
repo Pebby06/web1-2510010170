@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/form.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulir pemesanan kain dan busana Sasirangan khas Banjar.">
@@ -52,12 +53,15 @@
                 <strong>*</strong> wajib diisi.
             </p>
 
-            <form id="form-pesan" class="form-pesan" action="#" method="get">
+            <form id="form-pesan" class="form-pesan" action="#" method="get" novalidate>
 
                 <div class="kolom">
                     <label for="nama">Nama lengkap *</label>
                     <input type="text" id="nama" name="nama"
-                        required minlength="3" autocomplete="name">
+                    required minlength="3" autocomplete="name"
+                    aria-describedby="error-nama">
+
+                    <p class="pesan-error" id="error-nama"></p>
                 </div>
 
                 <div class="kolom">
@@ -65,19 +69,27 @@
                     <input type="tel" id="wa" name="wa"
                         required pattern="08[0-9]{8,11}"
                         placeholder="Contoh: 081234567890"
-                        autocomplete="tel">
+                        autocomplete="tel"
+                        aria-describedby="error-wa">
+
+                    <p class="pesan-error" id="error-wa"></p>
                 </div>
 
                 <div class="kolom">
                     <label for="email">Surel</label>
                     <input type="email" id="email" name="email"
-                        autocomplete="email">
+                        autocomplete="email"
+                        aria-describedby="error-email">
+
+                    <p class="pesan-error" id="error-email"></p>
                 </div>
 
                 <div class="kolom">
                     <label for="produk">Produk yang dipesan *</label>
 
-                    <select id="produk" name="produk" required>
+                    <select id="produk" name="produk" required
+                        aria-describedby="error-produk">
+
                         <option value="">-- Pilih produk --</option>
                         <option>Kain Motif Gigi Haruan</option>
                         <option>Kain Motif Kambang Kacang</option>
@@ -86,12 +98,17 @@
                         <option>Tas Naga Balimbur</option>
                         <option>Gamis Ombak Sinapur Karang</option>
                     </select>
+
+                    <p class="pesan-error" id="error-produk"></p>
                 </div>
 
                 <div class="kolom">
                     <label for="jumlah">Jumlah *</label>
                     <input type="number" id="jumlah" name="jumlah"
-                        min="1" max="50" value="1" required>
+                        required min="1"
+                        aria-describedby="error-jumlah">
+
+                    <p class="pesan-error" id="error-jumlah"></p>
                 </div>
 
                 <fieldset>
@@ -118,18 +135,40 @@
                         placeholder="Contoh: ukuran L, warna dominan merah"></textarea>
                 </div>
 
-                <label class="cek">
-                    <input type="checkbox" id="setuju"
-                        name="setuju" required>
-                    Saya setuju data ini hanya dipakai untuk
-                    memproses pesanan. *
-                </label>
+                <div class="kolom">
+
+                    <label class="cek">
+                        <input type="checkbox" id="setuju"
+                            name="setuju" required
+                            aria-describedby="error-setuju">
+
+                        Saya setuju data ini hanya dipakai untuk
+                        memproses pesanan. *
+                    </label>
+
+                    <p class="pesan-error" id="error-setuju"></p>
+
+                </div>
 
                 <button type="submit" class="tombol">
                     Kirim Pesanan
                 </button>
 
             </form>
+
+            <!-- Muncul setelah formulir valid -->
+            <div id="hasil-pesan" class="hasil-pesan" hidden>
+
+                <h2>Ringkasan Pesanan</h2>
+
+                <pre id="ringkasan"></pre>
+
+                <a id="tautan-wa" class="tombol"
+                    href="#" target="_blank" rel="noopener">
+                    Lanjutkan ke WhatsApp
+                </a>
+
+            </div>
 
         </section>
 
