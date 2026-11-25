@@ -11,7 +11,7 @@ const katalog = [
     nama: "Kain Motif Gigi Haruan", 
     kategori: "kain", 
     harga: 185000, 
-    gambar: "img/gigi-haruan.svg", 
+    gambar: "img/gigi-haruan.jpg", 
     deskripsi: "Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan.", 
 	  }, 
   { 
@@ -19,7 +19,7 @@ const katalog = [
     nama: "Kain Motif Kambang Kacang", 
     kategori: "kain", 
     harga: 175000, 
-    gambar: "img/kambang-kacang.svg", 
+    gambar: "img/kambang-kacang.jpg", 
 	    deskripsi: "Motif bunga kacang yang melambangkan keakraban dan kerukunan.", 
 	  }, 
 	  { 
@@ -27,7 +27,7 @@ const katalog = [
     nama: "Selendang Iris Pudak", 
     kategori: "aksesoris", 
     harga: 120000, 
-    gambar: "img/iris-pudak.svg", 
+    gambar: "img/iris-pudak.jpg", 
     deskripsi: "Selendang ringan bermotif irisan daun pudak (pandan).", 
   },
   {
@@ -43,7 +43,7 @@ const katalog = [
     nama: "Kain Motif Sasirangan Tradisional",
     kategori: "kain",
     harga: 180000,
-    gambar: "img/bayam-raja.svg",
+    gambar: "img/bayam-raja.jpg",
     deskripsi: "Kain sasirangan dengan motif tradisional khas Banjar.",
 },
 {
@@ -51,7 +51,7 @@ const katalog = [
     nama: "Selendang Sasirangan Banua",
     kategori: "aksesoris",
     harga: 125000,
-    gambar: "img/ombak-sinapur-karang.svg",
+    gambar: "img/ombak-sinapur.jpg",
     deskripsi: "Selendang sasirangan dengan motif khas Kalimantan Selatan.",
 },
 	  // ... lanjutkan untuk semua item (minimal 8 untuk tema Anda) 
