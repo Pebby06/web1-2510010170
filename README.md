@@ -3,7 +3,7 @@
  
 Situs web katalog UMKM kain sasirangan (fiktif) khas Banjarmasin. 
  
-**Demo langsung:** https://username.github.io/web1-npm/  
+**Demo langsung:** https://pebby06.github.io/web1TI-2510010170/index.html
 ## Fitur 
 -	Katalog dimuat dari data/katalog.json menggunakan Fetch API 
 -	Pencarian dan filter kategori 
