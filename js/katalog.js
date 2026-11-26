@@ -4,58 +4,77 @@
 // ========================================================= 
 
 	 
-// 1. Data katalog: array yang berisi objek-objek produk 
-const katalog = [ 
-{ 
-    id: 1, 
-    nama: "Kain Motif Gigi Haruan", 
-    kategori: "kain", 
-    harga: 185000, 
-    gambar: "img/gigi-haruan.jpg", 
-    deskripsi: "Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan.", 
-	  }, 
+// 1. Data katalog kini disimpan di data/katalog.json.
+// Awalnya kosong, lalu diisi oleh fungsi muatKatalog().
+let katalog = [];
+
+
+[ 
   { 
-    id: 2, 
-    nama: "Kain Motif Kambang Kacang", 
-    kategori: "kain", 
-    harga: 175000, 
-    gambar: "img/kambang-kacang.jpg", 
-	    deskripsi: "Motif bunga kacang yang melambangkan keakraban dan kerukunan.", 
-	  }, 
-	  { 
-    id: 3, 
-    nama: "Selendang Iris Pudak", 
-    kategori: "aksesoris", 
-    harga: 120000, 
-    gambar: "img/iris-pudak.jpg", 
-    deskripsi: "Selendang ringan bermotif irisan daun pudak (pandan).", 
-  },
-  {
-    id: 6,
-    nama: "Kain Motif Naga Balimbur",
-    kategori: "kain",
-    harga: 200000,
-    gambar: "img/naga-balimbur.svg",
-    deskripsi: "Kain sasirangan dengan motif Naga Balimbur khas Banjar.",
+    "id": 1, 
+    "nama": "Kain Motif Gigi Haruan", 
+    "kategori": "kain", 
+    "harga": 185000, 
+    "gambar": "img/gigi-haruan.jpg", 
+    "deskripsi": "Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan." 
+  }, 
+     { 
+    "id": 2, 
+    "nama": "Kain Motif Kambang Kacang", 
+    "kategori": "kain", 
+    "harga": 175000, 
+    "gambar": "img/kambang-kacang.jpg", 
+    "deskripsi": "Motif bunga kacang yang melambangkan keakraban dan kerukunan." 
+  },  	  
+    {
+  "id": 3,
+  "nama": "Selendang Iris Pudak",
+  "kategori": "aksesoris",
+  "harga": 120000,
+  "gambar": "img/iris-pudak.jpg",
+  "deskripsi": "Selendang ringan bermotif irisan daun pudak (pandan)."
 },
 {
-    id: 7,
-    nama: "Kain Motif Sasirangan Tradisional",
-    kategori: "kain",
-    harga: 180000,
-    gambar: "img/bayam-raja.jpg",
-    deskripsi: "Kain sasirangan dengan motif tradisional khas Banjar.",
+  "id": 6,
+  "nama": "Kain Motif Naga Balimbur",
+  "kategori": "kain",
+  "harga": 200000,
+  "gambar": "img/naga-balimbur.jpg",
+  "deskripsi": "Kain sasirangan dengan motif Naga Balimbur khas Banjar."
 },
 {
-    id: 8,
-    nama: "Selendang Sasirangan Banua",
-    kategori: "aksesoris",
-    harga: 125000,
-    gambar: "img/ombak-sinapur.jpg",
-    deskripsi: "Selendang sasirangan dengan motif khas Kalimantan Selatan.",
+  "id": 7,
+  "nama": "Kain Motif Sasirangan Tradisional",
+  "kategori": "kain",
+  "harga": 180000,
+  "gambar": "img/bayam-raja.jpg",
+  "deskripsi": "Kain sasirangan dengan motif tradisional khas Banjar."
 },
-	  // ... lanjutkan untuk semua item (minimal 8 untuk tema Anda) 
-	];
+{
+  "id": 8,
+  "nama": "Selendang Sasirangan Banua",
+  "kategori": "aksesoris",
+  "harga": 125000,
+  "gambar": "img/ombak-sinapur.jpg",
+  "deskripsi": "Selendang sasirangan dengan motif khas Kalimantan Selatan."
+},
+{
+  "id": 9,
+  "nama": "Baju Sasirangan Motif Kombinasi Hitam Putih",
+  "kategori": "pakaian",
+  "harga": 250000,
+  "gambar": "img/kemeja-pria-lengan-pendek.jpg",
+  "deskripsi": "Baju sasirangan khas Banjar dengan kombinasi warna hitam dan abu-abu serta motif hias putih yang unik dan menarik."
+},
+{
+  "id": 10,
+  "nama": "Baju Sasirangan Motif Intan",
+  "kategori": "pakaian",
+  "harga": 275000,
+  "gambar": "img/kemeja-pria-lengan-panjang.jpg",
+  "deskripsi": "Baju sasirangan lengan panjang khas Banjar dengan kombinasi warna hitam, merah marun, dan abu-abu serta motif geometris dan hiasan khas sasirangan yang elegan."
+}
+]
     // 2. Ambil elemen-elemen HTML yang akan dimanipulasi 
 const daftarKatalog = document.querySelector("#daftar-katalog"); const inputCari = document.querySelector("#cari"); 
 const tombolFilter = document.querySelectorAll(".tombol-filter"); const infoJumlah = document.querySelector("#info-jumlah");  
@@ -119,8 +138,28 @@ function tampilkanKatalog(daftarProduk) {
     infoJumlah.textContent = `Menampilkan ${daftarProduk.length} dari ${katalog.length} produk`;
 }
 
-// 10. Tampilkan semua produk ketika halaman pertama kali dibuka
-tampilkanKatalog(katalog);
+// 10. Memuat data katalog dari file JSON secara asinkron
+async function muatKatalog() {
+    infoJumlah.textContent = "Memuat katalog...";
+
+    try {
+        const respons = await fetch("data/katalog.json");
+
+        if (!respons.ok) {
+            throw new Error(`Gagal memuat katalog (HTTP ${respons.status})`);
+        }
+
+        katalog = await respons.json();
+        tampilkanKatalog(katalog);
+
+    } catch (galat) {
+        console.error(galat);
+        infoJumlah.textContent =
+            "Maaf, katalog gagal dimuat. Periksa koneksi Anda lalu muat ulang halaman.";
+    }
+}
+
+muatKatalog();
 // 7. Menyaring katalog berdasarkan kata kunci dan kategori
 function saringKatalog() {
     const kataKunci = inputCari.value.trim().toLowerCase();

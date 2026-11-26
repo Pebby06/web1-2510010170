@@ -1,0 +1,66 @@
+[ 
+  { 
+    "id": 1, 
+    "nama": "Kain Motif Gigi Haruan", 
+    "kategori": "kain", 
+    "harga": 185000, 
+    "gambar": "img/gigi-haruan.jpg", 
+    "deskripsi": "Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan." 
+  }, 
+  { 
+    "id": 2, 
+    "nama": "Kain Motif Kambang Kacang", 
+    "kategori": "kain", 
+    "harga": 175000, 
+    "gambar": "img/kambang-kacang.jpg", 
+    "deskripsi": "Motif bunga kacang yang melambangkan keakraban dan kerukunan." 
+  },
+    {
+  "id": 3,
+  "nama": "Selendang Iris Pudak",
+  "kategori": "aksesoris",
+  "harga": 120000,
+  "gambar": "img/iris-pudak.jpg",
+  "deskripsi": "Selendang ringan bermotif irisan daun pudak (pandan)."
+},
+    {
+    "id": 6,
+    "nama": "Kain Motif Naga Balimbur",
+    "kategori": "kain",
+    "harga": 200000,
+    "gambar": "img/naga-balimbur.jpg",
+    "deskripsi": "Kain sasirangan dengan motif Naga Balimbur khas Banjar."
+},
+{
+    "id": 7,
+    "nama": "Kain Motif Sasirangan Tradisional",
+    "kategori": "kain",
+    "harga": 180000,
+    "gambar": "img/bayam-raja.jpg",
+    "deskripsi": "Kain sasirangan dengan motif tradisional khas Banjar."
+},
+{
+    "id": 8,
+    "nama": "Selendang Sasirangan Banua",
+    "kategori": "aksesoris",
+    "harga": 125000,
+    "gambar": "img/ombak-sinapur.jpg",
+    "deskripsi": "Selendang sasirangan dengan motif khas Kalimantan Selatan."
+},
+{
+    "id": 9,
+    "nama": "Baju Sasirangan Motif Kombinasi Hitam Putih",
+    "kategori": "pakaian",
+    "harga": 250000,
+    "gambar": "img/kemeja-pria-lengan-pendek.jpg",
+    "deskripsi": "Baju sasirangan khas Banjar dengan kombinasi warna hitam dan abu-abu serta motif hias putih."
+},
+{
+    "id": 10,
+    "nama": "Baju Sasirangan Motif Intan",
+    "kategori": "pakaian",
+    "harga": 275000,
+    "gambar": "img/kemeja-pria-lengan-panjang.jpg",
+    "deskripsi": "Baju sasirangan lengan panjang khas Banjar dengan kombinasi warna hitam, merah marun, dan abu-abu."
+}
+]
