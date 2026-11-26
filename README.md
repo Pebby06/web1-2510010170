@@ -12,6 +12,9 @@ Proyek ini merupakan bagian dari tugas Praktikum Pemrograman Web 1 di Universita
 - **Program Studi:** Teknik Informatika
 - **Fakultas:** Teknologi Informasi
 - **Universitas:** UNISKA MAB
+- **GitHub:** [Kunjungi Repositori] https://github.com/Pebby06/web1TI-2510010170
+- **Website:** [Lihat Sasirangan Banua] https://pebby06.github.io/web1TI-2510010170/index.html
+ 
 
 ## Fitur Website
 
