@@ -72,7 +72,7 @@ let katalog = [];
   "kategori": "pakaian",
   "harga": 275000,
   "gambar": "img/kemeja-pria-lengan-panjang.jpg",
-  "deskripsi": "Baju sasirangan lengan panjang khas Banjar dengan kombinasi warna hitam, merah marun, dan abu-abu serta motif geometris dan hiasan khas sasirangan yang elegan."
+  "deskripsi": "Baju sasirangan lengan panjang khas Banjar dengan kombinasi warna hitam, merah marun, dan abu-abu serta motif geometris dan hiasan khas sasirangan yang elegan." 
 }
 ]
     // 2. Ambil elemen-elemen HTML yang akan dimanipulasi 
